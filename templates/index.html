@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/static/styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Steganography Tool</title>
+    
+</head>
+<body>
+    <h1>Steganography Tool</h1>
+    <center><a href="https://en.wikipedia.org/wiki/Steganography" style="color: #00ff00;"> What is Steganography ?</a> </center>
+    <section>
+        <h2><u>Encode Message in an Image 🔒</u></h2>
+    <form action="/upload" method="POST" enctype="multipart/form-data">
+        <label for="imageUpload">Upload PNG Image:</label>
+        <input type="file" name="imageUpload" id="imageUpload" accept=".png" required>
+        <br><br>
+        <label for="secretMessage">Enter Your Secret Message:</label>
+        <textarea name="secretMessage" id="secretMessage" rows="4" cols="50" required></textarea>
+        <br><br>
+        <input type="submit" value="Encode Message">
+    </form>
+</section>
+
+    <section>
+        <h2><u>Decode Message 🔓</u></h2>
+        <form action="/extract" method="POST" enctype="multipart/form-data">
+            <label for="decodeImageUpload">Upload PNG Image:</label>
+            <input type="file" name="imageUpload" id="decodeImageUpload" accept=".png" required>
+            <br><br>
+            <input type="hidden" name="action" value="decode">
+            <input type="submit" value="Decode Message">
+        </form>
+        
+    </section>
+</body>
+</html>
