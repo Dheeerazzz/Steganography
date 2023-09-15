@@ -4,7 +4,8 @@ from flask import Flask, request, render_template, send_file
 import os
 import tempfile
 import numpy as np
-import PIL.Image
+import PIL.Image 
+
 
 app = Flask(__name__)
 
